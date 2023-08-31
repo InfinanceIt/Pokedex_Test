@@ -2,7 +2,6 @@
 @import './variables.module.scss';
 
 .Pokemon_Img{
-    background-color:red;
     @include card;
     @include flex(column, 15em, center, center);
     padding: 1em 2em;
@@ -154,4 +153,8 @@
 
 .Bug{
     background-color:$bug; 
+}
+
+.Electric {
+    background-color: $electric;
 }

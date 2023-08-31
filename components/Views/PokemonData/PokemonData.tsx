@@ -1,6 +1,7 @@
 import Image from 'next/image';
-import PokemonDataShow from './PokemonDataShow/PokemonDataShow';
 import card from '../../../src/styles/card.module.scss';
+import TypePokemon from '../../CardByPokemon/TypePokemon';
+import PokemonDataShow from './PokemonDataShow/PokemonDataShow';
 
 export default function PokemonData({ pokemon }: { pokemon: any }) {
     let { id, height, weight, name, types, sprites } = pokemon;
@@ -12,7 +13,9 @@ export default function PokemonData({ pokemon }: { pokemon: any }) {
 
                 <div className={card.Types_Data}>
                     {types?.map((type: any) => (
-                        <span key={type?.slot}> {type?.type?.name} </span>
+                        <TypePokemon
+                        key={type?.slot}
+                        type={type?.type?.name}/>
                     ))}
                 </div>
 
@@ -52,6 +55,6 @@ export default function PokemonData({ pokemon }: { pokemon: any }) {
                 </div>
             </div>
 
-        </div>
-    )
+            </div>
+            )
 }

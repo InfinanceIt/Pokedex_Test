@@ -1,8 +1,9 @@
 import Image from 'next/image';
+import card from '../../../src/styles/card.module.scss';
 
 export default function PicturesPokemon({ sprites }: { sprites: any }) {
     return (
-        <div>
+        <div className={card.Pokemon_Img}>
             <div>
                 <Image
                     unoptimized
@@ -15,7 +16,6 @@ export default function PicturesPokemon({ sprites }: { sprites: any }) {
             </div>
 
             <div>
-                <div>
                     <Image
                         unoptimized
                         width={100}
@@ -24,8 +24,6 @@ export default function PicturesPokemon({ sprites }: { sprites: any }) {
                         src={sprites?.front_default}
                         alt={'Sprite Pokemon'}
                         blurDataURL={'/logo.png'} />
-                </div>
-                <div>
                     <Image
                         unoptimized
                         width={100}
@@ -34,7 +32,6 @@ export default function PicturesPokemon({ sprites }: { sprites: any }) {
                         src={sprites?.back_default}
                         alt={'Sprite Pokemon'}
                         blurDataURL={'/logo.png'} />
-                </div>
             </div>
 
         </div>

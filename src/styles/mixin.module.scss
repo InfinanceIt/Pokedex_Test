@@ -1,0 +1,46 @@
+@mixin flex($flex-direction, $width, $justify-content, $align-items) {
+    display: flex;
+    flex-direction: $flex-direction;
+    width: $width;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
+
+@mixin card{
+    margin: 1em;
+    background-color:White;
+    padding: 1em 0;
+    box-shadow: 0px 0px 16px 0px rgba(86,108,214,0.15);
+    border-radius: 10px;
+
+}
+
+@mixin types_Poke{    
+    span{
+        padding: .15em .6em;
+        border-radius: 10px;
+        font-size: .9em;
+        color:white;
+        background-color:$Blue;
+    }
+}
+
+@mixin reset{
+    outline:none;
+    border:none;
+    background-color:transparent;
+}
+
+//mediaQueries
+@mixin Phone{
+    @media only screen  and (max-width: 575.98px) and (orientation: portrait){
+        @content;
+      }
+}
+
+@mixin Tablet{
+    @media (max-width: 991.98px) { 
+        @content;
+     }
+
+}

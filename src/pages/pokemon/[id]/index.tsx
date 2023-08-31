@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import PokeTrainer from '../../../../components/PokeTrainer/PokeTrainer';
 import ViewPokemon from '../../../../components/Views/ViewPokemon/ViewPokemon';
+import container from '../../../styles/container.module.scss';
 
 
 export default function Pokemon() {
@@ -20,14 +21,22 @@ export default function Pokemon() {
                     <link rel="icon" href="/Pokedex.png" />
                 </Head>
 
-                <div>
-                    <Link href={'/'}> Atras </Link>
+                <div className={container.Flex}>
+                    <PokeTrainer />
+
+                    <div className={container.Back}>
+                        <Link href={'/'}>
+                            <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" >
+                                <g id="PT/Icons/Back" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <polygon id="Path" fill="#FFFFFF" fill-rule="nonzero" points="10.71875 5 4 11.71875 10.71875 18.4375 12.125 17 7.84375 12.71875 20.90625 12.71875 20.90625 10.71875 7.84375 10.71875 12.125 6.4375"></polygon>
+                                </g>
+                            </svg>
+                        </Link>
+                    </div>
+                    
+                    <ViewPokemon
+                        id={`${id}`} />
                 </div>
-
-                <PokeTrainer />
-
-                <ViewPokemon
-                    id={`${id}`} />
 
             </>
         )

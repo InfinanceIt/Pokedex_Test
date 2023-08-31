@@ -1,0 +1,228 @@
+@import './mixin.module.scss';
+@import './variables.module.scss';
+
+.Flex{
+    display:flex;
+}
+
+.PokeTrainer{
+    aside{
+        position: relative;
+        width: 20em;
+        height: 100vh;
+        background-color: $Blue;
+        @include flex(column, 20em, flex, center);
+    }
+
+    img{
+        padding: 1.2em;
+    }
+
+    svg{
+        display:none;
+    }
+
+
+.LogOut{
+        position: absolute; 
+        bottom: 0;
+
+    button{
+        @include reset;
+        @include flex(row, auto, center, center);
+        display:flex;
+        margin-bottom: .5em;
+        padding: 1.1em 7em;
+        color: white;
+        background-color: rgba(255, 255, 255, .2);
+        border:none;
+        border-radius: 5px;
+        font-weight: 600;
+        font-size: .9em;
+
+    }
+    svg{
+        display:block;
+        left:0;
+        position: absolute;
+        margin-left: 1em;
+    }
+
+    @include Tablet{
+        display:none;
+    }
+}
+    @include Tablet{
+        aside{
+            width: 100%;
+            position:fixed;
+            z-index: 2;
+            height: 5em;
+        }
+
+        svg{
+           width: 2.1em;
+           z-index: 5;
+           display:block;
+           left: 0;
+           position: absolute;
+           stroke:none;
+           stroke-width: 2; 
+           fill: white;
+           fill-rule: nonzero;
+           margin-top: -2em;
+           margin-left: 2em;
+        }
+
+        button{
+            display:none;
+        }
+    
+    }
+}
+
+.Trainer{
+    @include flex(column, 100%, center, center);
+    padding: 1em 0;
+    text-align:center;
+    color:White;
+
+    h2{ 
+        padding:.4em 0;
+        font-size: 1.6em;
+
+    }
+
+    h3{
+        font-size: 1.25em;
+        opacity: 70%;
+    }
+
+    p{
+        padding-top: 3.5em;
+        letter-spacing: .1em; 
+        
+    }
+
+    @include Tablet{
+        display:none;
+    }
+
+}
+
+.Align_Items{
+    @include flex(column, 100%, center, center);
+}
+
+.Pokemons{
+    @include flex(auto, 98%, space-evenly, center);
+    flex-wrap: wrap;
+    padding: 2.5em 0 0 0;
+    max-height:84vh;
+    margin-top: 1em;
+    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    @include Tablet{
+        width: 100%;
+        align-items:center;
+        padding-top: 8.5em;
+    }
+}
+
+.ViewPokemon{
+    @include flex(row, 100%, space-evenly, flex-start);
+    padding-top: 8em;
+    
+    @include Tablet{
+        width: 100%;
+        flex-direction: column;
+        align-items:center;
+        padding-top: 10em;
+        overflow:scroll;
+        height:70vh;
+        overflow-x: hidden;
+        margin-top:9em;
+        padding: 10em 0 2em 0;
+    }
+}
+
+.Left{
+    width: 78%;
+    padding: 3em 0 0 0;
+    position: fixed;
+    top:0;
+    z-index:0;
+    @include flex(auto, 78%, flex-end, center);
+
+    @include Tablet{
+        @include flex(auto, 100%, center, center);
+        padding: 8.3em 0 1em 0;
+        background-color: $Bgradiente1;
+    }
+    
+}
+
+.Search{
+    width: 20%;
+    display:flex;
+    box-shadow: 0px 0px 16px 0px rgba(86,108,214,0.15);
+    background-color:white;
+    border-radius:20px;
+    min-width: 20em;
+    margin-top: -2em;
+
+
+    input{
+        @include reset;
+        width: 90%;
+        padding-left:.5em;
+    }
+
+    svg{
+        width: 1.5em;
+        stroke:none;
+        stroke-width: 1; 
+        fill-rule: nonzero;
+        fill: white;
+        border-radius:20px;
+        padding: .55em 1.3em;
+        background-color:$Blue;
+    }
+
+    ::placeholder{
+        color: $Text;
+        opacity: 50%;
+    }
+
+}
+
+.Back{
+    svg{
+        width: 1.5em;
+        stroke:none;
+        stroke-width: 1; 
+        fill-rule: nonzero;
+        fill: white;
+        border-radius:20px;
+        padding: .55em 1.3em;
+        background-color:$Blue;
+        margin-top: 1em;
+        margin-left: 1em;
+    }
+
+    @include Tablet{
+        position:absolute;
+        background-color:$Bgradiente1;
+        @include flex(auto, 100%, flex-start, center);
+
+        svg{
+            padding: .45em 1em;
+            margin-top: 5.5em;
+        }
+      
+    }
+
+}
+

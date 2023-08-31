@@ -3,7 +3,7 @@ export default function PokemonDataShow({ text, data }: { text: string, data: st
     return (
         <div>
             <h3>{text}</h3>
-            <h5>{data}</h5>
+            <h4>{data}</h4>
         </div>
     )
 }

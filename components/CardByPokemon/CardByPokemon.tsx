@@ -1,6 +1,7 @@
 import useSWR from 'swr';
 import Link from 'next/link';
 import Image from 'next/image';
+import card from '../../src/styles/card.module.scss';
 
 const fetcher = (urlP: any) => fetch(urlP).then((res) => res.json());
 
@@ -10,34 +11,31 @@ export default function CardByPokemon({ pokemon }: { pokemon: any }) {
     if (isLoading) return <h1> Cargando </h1>
     if (pokemonF) {
         return (
-            <>
+            <div className={card.Pokemon}>
                 <Link href={`/pokemon/${pokemonF?.id}`}>
-                    <div>
-                        <div>
-                            <h4> {pokemon?.name} </h4>
-                            <h3> {pokemonF?.id} </h3>
-                        </div>
+                    <div className={card.Aling_Text_Card}>
+                        <h3> {pokemon?.name} </h3>
+                        <h4> {pokemonF?.id} </h4>
+                    </div>
 
-                        <div>
-                            <Image
-                                unoptimized
-                                width={200}
-                                height={100}
-                                priority={true}
-                                src={pokemonF?.sprites?.front_default}
-                                alt={'Sprite Pokemon'}
-                                blurDataURL={'/logo.png'} />
-                        </div>
+                        <Image
+                            unoptimized
+                            width={200}
+                            height={200}
+                            priority={true}
+                            src={pokemonF?.sprites?.front_default}
+                            alt={'Sprite Pokemon'}
+                            blurDataURL={'/logo.png'} />
 
-                        <div>
-                            {pokemonF?.types?.map((type: any) =>
-                                <p key={type?.slot}>
-                                    {type?.type?.name}
-                                </p>)}
-                        </div>
+                    <div className={card.Types}>
+                        {pokemonF?.types?.map((type: any) =>
+                            <span  key={type?.slot}>
+                                {type?.type?.name}
+                            </span>)}
+                    </div>
 
-                    </div></Link>
-            </>
+                </Link>
+            </div>
         )
     }
 }

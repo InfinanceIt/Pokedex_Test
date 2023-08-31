@@ -1,0 +1,157 @@
+@import './mixin.module.scss';
+@import './variables.module.scss';
+
+.Pokemon_Img{
+    background-color:red;
+    @include card;
+    @include flex(column, 15em, center, center);
+    padding: 1em 2em;
+    
+    img{
+        margin: -1em 0;
+    }
+       
+    @include Tablet{
+        width: 21em;
+    }
+    
+}
+
+.Pokemon_Data{
+    @include card;
+    @include flex(column, 35em, center, center);
+    width: 45%;
+    min-width: 20em;
+
+    h1{
+        padding: .7em 0;
+
+    }
+   
+    @include Tablet{
+        width: 25em;
+    }
+
+}
+.Aling_Left{
+    width: 90%;
+}
+
+.Data_Items{
+    width: 100%;
+    padding: 1em 0;
+
+    h4{
+        font-weight:100;
+    }
+}
+
+.Data_Items > div{
+    padding: 1em 0; 
+    border-bottom: 1px solid $Bgradiente1;
+}
+
+.Types_Data{
+    @include flex(row, 100%, left, center);
+    @include types_Poke;
+  
+    span{
+        margin-right: .7em;
+    }
+ }
+
+.Pokemon{
+    @include card ;
+    @include flex(column, 14%, center, center);
+    min-width: 13em;
+    text-align:center;
+
+
+    a{
+        text-decoration:none;
+        color: $Text;
+    }
+
+    h3{
+        font-size: 1.2em;
+        font-weight: 600;    
+
+    }
+
+    h4{
+        font-size: .95em;
+        font-weight: 100;    
+    }
+
+}
+
+.Aling_Text_Card{
+    margin-top:1em;
+    margin-bottom: -1em;
+}
+
+.Types{
+    @include flex(row, 100%, space-evenly, center);
+    @include types_Poke ;
+    margin-top: -1em;    
+}
+
+.Grass{
+    background-color:$grass;
+}
+
+.Poison{
+    background-color: $poison;
+}
+
+.Water{
+    background-color:$water; 
+}
+
+.Fire{
+    background-color:$fire; 
+
+}
+
+.Flying{
+    background-color:$flying; 
+
+}
+
+.Normal{
+    background-color:$normal; 
+
+}
+
+.Ground{
+    background-color:$ground; 
+
+}
+
+.Fairy{
+    background-color:$fairy; 
+}
+
+.Fighting{
+    background-color:$fighting; 
+}
+
+.Psychic{
+    background-color:$psychic; 
+}
+
+.Rock{
+    background-color:$rock; 
+}
+
+.Ghost{
+    background-color:$ghost; 
+}
+
+.Ice{
+    background-color:$ice; 
+}
+
+.Bug{
+    background-color:$bug; 
+}

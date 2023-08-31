@@ -1,6 +1,7 @@
 import useSWR from 'swr';
 import PokemonData from '../PokemonData/PokemonData';
 import PicturesPokemon from '../PicturesPokemon/PicturesPokemon';
+import container from '../../../src/styles/container.module.scss';
 
 const fetcher = (urlP: any) => fetch(urlP).then((res) => res.json());
 
@@ -11,15 +12,13 @@ export default function ViewPokemon({ id }: { id: string }) {
     if (isLoading) return <h1> Cargando Pokemon </h1>
     if (poke) {
         return (
-            <div>
+            <div className={container.ViewPokemon}>
                 <PicturesPokemon
                     sprites={poke?.sprites} />
 
-                <div>
-                    <PokemonData
-                        pokemon={poke} />
-                </div>
-
+                <PokemonData
+                    pokemon={poke} />
+                    
             </div>
         )
     }

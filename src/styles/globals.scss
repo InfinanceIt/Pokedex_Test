@@ -1,0 +1,28 @@
+@import './variables.module.scss';
+//@import './mixin.module.scss';
+
+*{
+  margin                  : 0               ;
+  padding                 : 0               ;
+  -moz-osx-font-smoothing : grayscale       ;
+  -webkit-font-smoothing  : antialiased     ;
+}
+
+*, *::before, *::after{
+  box-sizing: inherit;
+}
+  
+html {
+  /* 10px */
+  font-size: 62.5%;
+}
+
+body {
+  /* 16px */
+  font-size: 1.6rem;
+  font-family: Arial;
+  background: linear-gradient(0deg, $Bgradiente2 35%, $Bgradiente1 100%);
+  color: $Text;
+  overflow:hidden;
+
+}
